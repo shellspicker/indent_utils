@@ -1,0 +1,727 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on December, 15 2008 by texi2html 1.78 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+
+-->
+<head>
+<title>indent:  Indent and Format C Program Source: A. Option Summary</title>
+
+<meta name="description" content="indent:  Indent and Format C Program Source: A. Option Summary">
+<meta name="keywords" content="indent:  Indent and Format C Program Source: A. Option Summary">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.78">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Option-Summary"></a>
+<a name="SEC17"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_16.html#SEC16" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<hr size="1">
+<h1 class="appendix"> A. Option Summary </h1>
+
+<p>Here is a list of all the options for <code>indent</code>, alphabetized by
+short option.  It is followed by a cross key alphabetized by long option.
+</p>
+<dl compact="compact">
+<dt> &lsquo;<samp>-bad</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--blank-lines-after-declarations</samp>&rsquo;</dt>
+<dd><p>Force blank lines after the declarations.<br>
+See section <a href="indent_5.html#SEC5">Blank lines</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-bap</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--blank-lines-after-procedures</samp>&rsquo;</dt>
+<dd><p>Force blank lines after procedure bodies.<br>
+See section <a href="indent_5.html#SEC5">Blank lines</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-bbb</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--blank-lines-before-block-comments</samp>&rsquo;</dt>
+<dd><p>Force blank lines before block comments.<br>
+See section <a href="indent_5.html#SEC5">Blank lines</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-bbo</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--break-before-boolean-operator</samp>&rsquo;</dt>
+<dd><p>Prefer to break long lines before boolean operators.<br>
+See section <a href="indent_12.html#SEC12">Breaking long lines</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-bc</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--blank-lines-after-commas</samp>&rsquo;</dt>
+<dd><p>Force newline after comma in declaration.<br>
+See section <a href="indent_10.html#SEC10">Declarations</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-bl</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--braces-after-if-line</samp>&rsquo;</dt>
+<dd><p>Put braces on line after <code>if</code>, etc.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-blf</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--braces-after-func-def-line</samp>&rsquo;</dt>
+<dd><p>Put braces on line following function definition line.<br>
+See section <a href="indent_10.html#SEC10">Declarations</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-bli<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--brace-indent<var>n</var></samp>&rsquo;</dt>
+<dd><p>Indent braces <var>n</var> spaces.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-bls</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--braces-after-struct-decl-line</samp>&rsquo;</dt>
+<dd><p>Put braces on the line after <code>struct</code> declaration lines.<br>
+See section <a href="indent_10.html#SEC10">Declarations</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-br</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--braces-on-if-line</samp>&rsquo;</dt>
+<dd><p>Put braces on line with <code>if</code>, etc.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-brf</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--braces-on-func-def-line</samp>&rsquo;</dt>
+<dd><p>Put braces on function definition line.<br>
+See section <a href="indent_10.html#SEC10">Declarations</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-brs</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--braces-on-struct-decl-line</samp>&rsquo;</dt>
+<dd><p>Put braces on <code>struct</code> declaration line.<br>
+See section <a href="indent_10.html#SEC10">Declarations</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-bs</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--Bill-Shannon</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--blank-before-sizeof</samp>&rsquo;</dt>
+<dd><p>Put a space between <code>sizeof</code> and its argument.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-c<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--comment-indentation<var>n</var></samp>&rsquo;</dt>
+<dd><p>Put comments to the right of code in column <var>n</var>.<br>
+See section <a href="indent_8.html#SEC8">Comments</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-cbi<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--case-brace-indentation<var>n</var></samp>&rsquo;</dt>
+<dd><p>Indent braces after a case label N spaces.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-cd<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--declaration-comment-column<var>n</var></samp>&rsquo;</dt>
+<dd><p>Put comments to the right of the declarations in column <var>n</var>.<br>
+See section <a href="indent_8.html#SEC8">Comments</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-cdb</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--comment-delimiters-on-blank-lines</samp>&rsquo;</dt>
+<dd><p>Put comment delimiters on blank lines.<br>
+See section <a href="indent_8.html#SEC8">Comments</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-cdw</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--cuddle-do-while</samp>&rsquo;</dt>
+<dd><p>Cuddle while of <code>do {} while;</code> and preceding &lsquo;<samp>}</samp>&rsquo;.<br>
+See section <a href="indent_8.html#SEC8">Comments</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-ce</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--cuddle-else</samp>&rsquo;</dt>
+<dd><p>Cuddle else and preceding &lsquo;<samp>}</samp>&rsquo;.<br>
+See section <a href="indent_8.html#SEC8">Comments</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-ci<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--continuation-indentation<var>n</var></samp>&rsquo;</dt>
+<dd><p>Continuation indent of <var>n</var> spaces.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-cli<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--case-indentation<var>n</var></samp>&rsquo;</dt>
+<dd><p>Case label indent of <var>n</var> spaces.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-cp<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--else-endif-column<var>n</var></samp>&rsquo;</dt>
+<dd><p>Put comments to the right of <code>#else</code> and 
+<code>#endif</code> statements in column <var>n</var>.<br>
+See section <a href="indent_8.html#SEC8">Comments</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-cs</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--space-after-cast</samp>&rsquo;</dt>
+<dd><p>Put a space after a cast operator.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-d<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--line-comments-indentation<var>n</var></samp>&rsquo;</dt>
+<dd><p>Set indentation of comments not to the right 
+of code to <var>n</var> spaces.<br>
+See section <a href="indent_8.html#SEC8">Comments</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-bfda</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--break-function-decl-args</samp>&rsquo;</dt>
+<dd><p>Break the line before all arguments in a declaration.<br>
+See section <a href="indent_10.html#SEC10">Declarations</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-bfde</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--break-function-decl-args-end</samp>&rsquo;</dt>
+<dd><p>Break the line after the last argument in a declaration.<br>
+See section <a href="indent_10.html#SEC10">Declarations</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-dj<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--left-justify-declarations</samp>&rsquo;</dt>
+<dd><p>If -cd 0 is used then comments after declarations are left justified
+behind the declaration.<br>
+See section <a href="indent_10.html#SEC10">Declarations</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-di<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--declaration-indentation<var>n</var></samp>&rsquo;</dt>
+<dd><p>Put variables in column <var>n</var>.<br>
+See section <a href="indent_10.html#SEC10">Declarations</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-fc1</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--format-first-column-comments</samp>&rsquo;</dt>
+<dd><p>Format comments in the first column.<br>
+See section <a href="indent_8.html#SEC8">Comments</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-fca</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--format-all-comments</samp>&rsquo;</dt>
+<dd><p>Do not disable all formatting of comments.<br>
+See section <a href="indent_8.html#SEC8">Comments</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-gnu</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--gnu-style</samp>&rsquo;</dt>
+<dd><p>Use GNU coding style.  This is the default.<br>
+See section <a href="indent_4.html#SEC4">Common styles</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-hnl</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--honour-newlines</samp>&rsquo;</dt>
+<dd><p>Prefer to break long lines at the position of newlines in the input.<br>
+See section <a href="indent_12.html#SEC12">Breaking long lines</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-i<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--indent-level<var>n</var></samp>&rsquo;</dt>
+<dd><p>Set indentation level to <var>n</var> spaces.<br>
+See section <a href="indent_11.html#SEC11">Indentation</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-il<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--indent-label<var>n</var></samp>&rsquo;</dt>
+<dd><p>Set offset for labels to column <var>n</var>.<br>
+See section <a href="indent_11.html#SEC11">Indentation</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-ip<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--parameter-indentation<var>n</var></samp>&rsquo;</dt>
+<dd><p>Indent parameter types in old-style function 
+definitions by <var>n</var> spaces.<br>
+See section <a href="indent_11.html#SEC11">Indentation</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-kr</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--k-and-r-style</samp>&rsquo;</dt>
+<dd><p>Use Kernighan &amp; Ritchie coding style.<br>
+See section <a href="indent_4.html#SEC4">Common styles</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-l<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--line-length<var>n</var></samp>&rsquo;</dt>
+<dd><p>Set maximum line length for non-comment lines to <var>n</var>.<br>
+See section <a href="indent_12.html#SEC12">Breaking long lines</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-lc<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--comment-line-length<var>n</var></samp>&rsquo;</dt>
+<dd><p>Set maximum line length for comment formatting to <var>n</var>.<br>
+See section <a href="indent_8.html#SEC8">Comments</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-linux</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--linux-style</samp>&rsquo;</dt>
+<dd><p>Use Linux coding style.<br>
+See section <a href="indent_4.html#SEC4">Common styles</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-lp</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--continue-at-parentheses</samp>&rsquo;</dt>
+<dd><p>Line up continued lines at parentheses.<br>
+See section <a href="indent_11.html#SEC11">Indentation</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-lps</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--leave-preprocessor-space</samp>&rsquo;</dt>
+<dd><p>Leave space between &lsquo;<samp>#</samp>&rsquo; and preprocessor directive.<br>
+See section <a href="indent_11.html#SEC11">Indentation</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nbad</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--no-blank-lines-after-declarations</samp>&rsquo;</dt>
+<dd><p>Do not force blank lines after declarations.<br>
+See section <a href="indent_5.html#SEC5">Blank lines</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nbap</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--no-blank-lines-after-procedures</samp>&rsquo;</dt>
+<dd><p>Do not force blank lines after procedure bodies.<br>
+See section <a href="indent_5.html#SEC5">Blank lines</a>.
+</p>
+
+</dd>
+<dt> &lsquo;<samp>-nbbo</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--break-after-boolean-operator</samp>&rsquo;</dt>
+<dd><p>Do not prefer to break long lines before boolean operators.<br>
+See section <a href="indent_12.html#SEC12">Breaking long lines</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nbc</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--no-blank-lines-after-commas</samp>&rsquo;</dt>
+<dd><p>Do not force newlines after commas in declarations.<br>
+See section <a href="indent_10.html#SEC10">Declarations</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nbfda</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--dont-break-function-decl-args</samp>&rsquo;</dt>
+<dd><p>Don't put each argument in a function declaration on a separate line.<br>
+See section <a href="indent_10.html#SEC10">Declarations</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-ncdb</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--no-comment-delimiters-on-blank-lines</samp>&rsquo;</dt>
+<dd><p>Do not put comment delimiters on blank lines.<br>
+See section <a href="indent_8.html#SEC8">Comments</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-ncdw</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--dont-cuddle-do-while</samp>&rsquo;</dt>
+<dd><p>Do not cuddle <code>}</code> and the <code>while</code> of a <code>do {} while;</code>.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nce</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--dont-cuddle-else</samp>&rsquo;</dt>
+<dd><p>Do not cuddle <code>}</code> and <code>else</code>.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-ncs</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--no-space-after-casts</samp>&rsquo;</dt>
+<dd><p>Do not put a space after cast operators.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-ndj<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--dont-left-justify-declarations</samp>&rsquo;</dt>
+<dd><p>Comments after declarations are treated the same as 
+comments after other statements.<br>
+See section <a href="indent_10.html#SEC10">Declarations</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nfc1</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--dont-format-first-column-comments</samp>&rsquo;</dt>
+<dd><p>Do not format comments in the first column as normal.<br>
+See section <a href="indent_8.html#SEC8">Comments</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nfca</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--dont-format-comments</samp>&rsquo;</dt>
+<dd><p>Do not format any comments.<br>
+See section <a href="indent_8.html#SEC8">Comments</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nhnl</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--ignore-newlines</samp>&rsquo;</dt>
+<dd><p>Do not prefer to break long lines at the position of newlines in the input.<br>
+See section <a href="indent_12.html#SEC12">Breaking long lines</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nip</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--no-parameter-indentation</samp>&rsquo;</dt>
+<dd><p>Zero width indentation for parameters.<br>
+See section <a href="indent_11.html#SEC11">Indentation</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nlp</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--dont-line-up-parentheses</samp>&rsquo;</dt>
+<dd><p>Do not line up parentheses.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-npcs</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--no-space-after-function-call-names</samp>&rsquo;</dt>
+<dd><p>Do not put space after the function in function calls.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nprs</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--no-space-after-parentheses</samp>&rsquo;</dt>
+<dd><p>Do not put a space after every '(' and before every ')'.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-npsl</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--dont-break-procedure-type</samp>&rsquo;</dt>
+<dd><p>Put the type of a procedure on the same line as its name.<br>
+See section <a href="indent_10.html#SEC10">Declarations</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nsaf</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--no-space-after-for</samp>&rsquo;</dt>
+<dd><p>Do not put a space after every <code>for</code>.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nsai</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--no-space-after-if</samp>&rsquo;</dt>
+<dd><p>Do not put a space after every <code>if</code>.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nsaw</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--no-space-after-while</samp>&rsquo;</dt>
+<dd><p>Do not put a space after every <code>while</code>.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nsc</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--dont-star-comments</samp>&rsquo;</dt>
+<dd><p>Do not put the &lsquo;<samp>*</samp>&rsquo; character at the left of comments.<br>
+See section <a href="indent_8.html#SEC8">Comments</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nsob</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--leave-optional-blank-lines</samp>&rsquo;</dt>
+<dd><p>Do not swallow optional blank lines.<br>
+See section <a href="indent_5.html#SEC5">Blank lines</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nss</samp>&rsquo;  </dt>
+<dt> &lsquo;<samp>--dont-space-special-semicolon</samp>&rsquo;</dt>
+<dd><p>Do not force a space before the semicolon after certain statements.
+Disables &lsquo;<samp>-ss</samp>&rsquo;.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nut</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--no-tabs</samp>&rsquo;</dt>
+<dd><p>Use spaces instead of tabs.<br>
+See section <a href="indent_11.html#SEC11">Indentation</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-nv</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--no-verbosity</samp>&rsquo;</dt>
+<dd><p>Disable verbose mode.<br>
+See section <a href="indent_14.html#SEC14">Miscellaneous options</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-orig</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--original</samp>&rsquo;</dt>
+<dd><p>Use the original Berkeley coding style.<br>
+See section <a href="indent_4.html#SEC4">Common styles</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-npro</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--ignore-profile</samp>&rsquo;</dt>
+<dd><p>Do not read &lsquo;<tt>.indent.pro</tt>&rsquo; files.<br>
+See section <a href="indent_2.html#SEC2">Invoking <code>indent</code></a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-pcs</samp>&rsquo;  </dt>
+<dt> &lsquo;<samp>--space-after-procedure-calls</samp>&rsquo;</dt>
+<dd><p>Insert a space between the name of the 
+procedure being called and the &lsquo;<samp>(</samp>&rsquo;.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-pi<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--paren-indentation<var>n</var></samp>&rsquo;</dt>
+<dd><p>Specify the extra indentation per open parentheses '(' when a
+statement is broken.
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-pmt</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--preserve-mtime</samp>&rsquo;</dt>
+<dd><p>Preserve access and modification times on output files.
+See section <a href="indent_14.html#SEC14">Miscellaneous options</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-ppi<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--preprocessor-indentation<var>n</var></samp>&rsquo;</dt>
+<dd><p>Specify the indentation for preprocessor conditional statements.
+See section <a href="indent_11.html#SEC11">Indentation</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-prs</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--space-after-parentheses</samp>&rsquo;</dt>
+<dd><p>Put a space after every '(' and before every ')'.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-psl</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--procnames-start-lines</samp>&rsquo;</dt>
+<dd><p>Put the type of a procedure on the line before its name.<br>
+See section <a href="indent_10.html#SEC10">Declarations</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-saf</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--space-after-for</samp>&rsquo;</dt>
+<dd><p>Put a space after each <code>for</code>.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-sai</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--space-after-if</samp>&rsquo;</dt>
+<dd><p>Put a space after each <code>if</code>.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-saw</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--space-after-while</samp>&rsquo;</dt>
+<dd><p>Put a space after each <code>while</code>.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-sbi<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--struct-brace-indentation<var>n</var></samp>&rsquo;</dt>
+<dd><p>Indent braces of a struct, union or enum N spaces.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-sc</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--start-left-side-of-comments</samp>&rsquo;</dt>
+<dd><p>Put the &lsquo;<samp>*</samp>&rsquo; character at the left of comments.<br>
+See section <a href="indent_8.html#SEC8">Comments</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-sob</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--swallow-optional-blank-lines</samp>&rsquo;</dt>
+<dd><p>Swallow optional blank lines.<br>
+See section <a href="indent_5.html#SEC5">Blank lines</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-ss</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--space-special-semicolon</samp>&rsquo;</dt>
+<dd><p>On one-line <code>for</code> and <code>while</code> statements, 
+force a blank before the semicolon.<br>
+See section <a href="indent_9.html#SEC9">Statements</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-st</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--standard-output</samp>&rsquo;</dt>
+<dd><p>Write to standard output.<br>
+See section <a href="indent_2.html#SEC2">Invoking <code>indent</code></a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-T</samp>&rsquo;   </dt>
+<dd><p>Tell <code>indent</code> the name of typenames.<br>
+See section <a href="indent_10.html#SEC10">Declarations</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-ts<var>n</var></samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--tab-size<var>n</var></samp>&rsquo;</dt>
+<dd><p>Set tab size to <var>n</var> spaces.<br>
+See section <a href="indent_11.html#SEC11">Indentation</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-ut</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--use-tabs</samp>&rsquo;</dt>
+<dd><p>Use tabs. This is the default.<br>
+See section <a href="indent_11.html#SEC11">Indentation</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-v</samp>&rsquo;</dt>
+<dt> &lsquo;<samp>--verbose</samp>&rsquo;</dt>
+<dd><p>Enable verbose mode.<br>
+See section <a href="indent_14.html#SEC14">Miscellaneous options</a>.
+</p>
+</dd>
+<dt> &lsquo;<samp>-version</samp>&rsquo;</dt>
+<dd><p>Output the version number of <code>indent</code>.<br>
+See section <a href="indent_14.html#SEC14">Miscellaneous options</a>.
+</p></dd>
+</dl>
+
+<a name="SEC18"></a>
+<h3 class="subheading"> Options' Cross Key </h3>
+
+<p>Here is a list of options alphabetized by long option, to help you find
+the corresponding short option.
+</p>
+
+<table><tr><td>&nbsp;</td><td><pre class="example">--blank-lines-after-commas                      -bc             
+--blank-lines-after-declarations                -bad            
+--blank-lines-after-procedures                  -bap            
+--blank-lines-before-block-comments             -bbb            
+--braces-after-if-line                          -bl             
+--braces-after-func-def-line                    -blf
+--brace-indent                                  -bli
+--braces-after-struct-decl-line                 -bls
+--braces-on-if-line                             -br             
+--braces-on-func-def-line                       -brf
+--braces-on-struct-decl-line                    -brs
+--break-after-boolean-operator                  -nbbo
+--break-before-boolean-operator                 -bbo
+--break-function-decl-args                      -bfda
+--break-function-decl-args-end                  -bfde
+--case-indentation                              -cli<var>n</var>     
+--case-brace-indentation                        -cbi<var>n</var>
+--comment-delimiters-on-blank-lines             -cdb            
+--comment-indentation                           -c<var>n</var>       
+--continuation-indentation                      -ci<var>n</var>      
+--continue-at-parentheses                       -lp             
+--cuddle-do-while                               -cdw
+--cuddle-else                                   -ce             
+--declaration-comment-column                    -cd<var>n</var>      
+--declaration-indentation                       -di<var>n</var>      
+--dont-break-function-decl-args                 -nbfda
+--dont-break-function-decl-args-end             -nbfde
+--dont-break-procedure-type                     -npsl           
+--dont-cuddle-do-while                          -ncdw
+--dont-cuddle-else                              -nce            
+--dont-format-comments                          -nfca           
+--dont-format-first-column-comments             -nfc1           
+--dont-line-up-parentheses                      -nlp            
+--dont-left-justify-declarations                -ndj  
+--dont-space-special-semicolon                  -nss
+--dont-star-comments                            -nsc            
+--else-endif-column                             -cp<var>n</var>
+--format-all-comments                           -fca            
+--format-first-column-comments                  -fc1            
+--gnu-style                                     -gnu            
+--honour-newlines                               -hnl
+--ignore-newlines                               -nhnl
+--ignore-profile                                -npro           
+--indent-label                                  -il<var>n</var>       
+--indent-level                                  -i<var>n</var>       
+--k-and-r-style                                 -kr             
+--leave-optional-blank-lines                    -nsob           
+--leave-preprocessor-space                      -lps
+--left-justify-declarations                     -dj 
+--line-comments-indentation                     -d<var>n</var>       
+--line-length                                   -l<var>n</var>       
+--linux-style                                   -linux             
+--no-blank-lines-after-commas                   -nbc            
+--no-blank-lines-after-declarations             -nbad           
+--no-blank-lines-after-procedures               -nbap           
+--no-blank-lines-before-block-comments          -nbbb           
+--no-comment-delimiters-on-blank-lines          -ncdb           
+--no-space-after-casts                          -ncs            
+--no-parameter-indentation                      -nip            
+--no-space-after-for				-nsaf
+--no-space-after-function-call-names            -npcs           
+--no-space-after-if				-nsai
+--no-space-after-parentheses                    -nprs
+--no-space-after-while				-nsaw
+--no-tabs                                       -nut
+--no-verbosity                                  -nv             
+--original                                      -orig
+--parameter-indentation                         -ip<var>n</var>      
+--paren-indentation                             -pi<var>n</var>
+--preserve-mtime				-pmt
+--preprocessor-indentation                      -ppi<var>n</var>
+--procnames-start-lines                         -psl            
+--space-after-cast                              -cs             
+--space-after-for				-saf
+--space-after-if				-sai
+--space-after-parentheses                       -prs
+--space-after-procedure-calls                   -pcs            
+--space-after-while				-saw
+--space-special-semicolon                       -ss             
+--standard-output                               -st             
+--start-left-side-of-comments                   -sc             
+--struct-brace-indentation                      -sbi<var>n</var>
+--swallow-optional-blank-lines                  -sob            
+--tab-size                                      -ts<var>n</var>      
+--use-tabs                                      -ut
+--verbose                                       -v              
+</pre></td></tr></table>
+
+<hr size="1">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_16.html#SEC16" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>david</em> on <em>December, 15 2008</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.78</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

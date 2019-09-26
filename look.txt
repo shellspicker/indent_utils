@@ -1,0 +1,44 @@
+代码格式化工具, indent和astyle.
+
+indent
+gnu的代码格式化工具(针对c)，大概没有支持c++
+gnu文档
+https://www.gnu.org/software/indent/manual/
+
+man文档bug
+bfda和bfde的关闭选项写成了nbdfa和nbdfe
+dj选项没有在DECLARATION里面出现，在COMMENTS里面出现
+其实有很多选项都没有在说明的块里面出现。。。只有一句话解释
+
+使用
+默认的gnu格式，自定义的话只要和gnu比较即可
+我已经定制好c代码的格式了，配置文件在index/.indent.pro，放到home目录即可
+直接对文件修改, 同时备份后缀~的同名文件.
+
+说明
+注释默认不处理第一列起始的注释
+代码中的注释因为会缩进所有可以处理
+注释本身会对齐处理
+盒型注释一般不会处理，最多是处理开头的空格格式
+注释的右对齐列，数量不准确，具体以效果为主
+单空行算空格，多空行算段落，文档没有具体区别这2个的说明
+一些约定俗成的规范，indent没有选项，但是处理了
+一些情况的函数或结构体的开头可能不会按照设定的格式去处理，比如说static开头的
+bfda+nbfde的短选项和长选项, 写在配置文件里面的效果不一样. 写成长选项, bfda要放在
+nbfde的后面, 写成短选项, 没有顺序要求, 算是一个bug.
+
+astyle
+for C, C++, C++/CLI, Objective‑C, C#, and Java Source Code
+官网
+http://astyle.sourceforge.net
+文档
+这个直接看格式选项对应的效果即可.
+http://astyle.sourceforge.net/astyle.html
+
+使用
+配置文件名叫.astylerc, 放在home目录下.
+直接对文件修改, 同时备份后缀.orig的同名文件.
+
+todolist
+...
+

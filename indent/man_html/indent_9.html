@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on December, 15 2008 by texi2html 1.78 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+
+-->
+<head>
+<title>indent:  Indent and Format C Program Source: 1.6 Statements</title>
+
+<meta name="description" content="indent:  Indent and Format C Program Source: 1.6 Statements">
+<meta name="keywords" content="indent:  Indent and Format C Program Source: 1.6 Statements">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.78">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Statements"></a>
+<a name="SEC9"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_8.html#SEC8" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_10.html#SEC10" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_17.html#SEC17" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<hr size="1">
+<h2 class="section"> 1.6 Statements </h2>
+
+<p>The &lsquo;<samp>-br</samp>&rsquo; or &lsquo;<samp>-bl</samp>&rsquo; option specifies how to format braces.
+</p>
+<p>The &lsquo;<samp>-br</samp>&rsquo; option formats statement braces like this:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">if (x &gt; 0) {
+  x--;
+}
+</pre></td></tr></table>
+
+<p>The &lsquo;<samp>-bl</samp>&rsquo; option formats them like this:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">if (x &gt; 0)
+  {
+    x--;
+  }
+</pre></td></tr></table>
+
+<a name="IDX66"></a>
+<a name="IDX67"></a>
+<p>If you use the &lsquo;<samp>-bl</samp>&rsquo; option, you may also want to specify the
+&lsquo;<samp>-bli</samp>&rsquo; option.  This option specifies the number of spaces by
+which braces are indented.  &lsquo;<samp>-bli2</samp>&rsquo;, the default, gives the
+result shown above.  &lsquo;<samp>-bli0</samp>&rsquo; results in the following:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">if (x &gt; 0)
+{
+  x--;
+}
+</pre></td></tr></table>
+
+<a name="IDX68"></a>
+<a name="IDX69"></a>
+<a name="IDX70"></a>
+<a name="IDX71"></a>
+<p>If you are using the &lsquo;<samp>-br</samp>&rsquo; option, you probably want to also use
+the &lsquo;<samp>-ce</samp>&rsquo; option.  This causes the <code>else</code> in an if-then-else
+construct to cuddle up to the immediately preceding &lsquo;<samp>}</samp>&rsquo;.  For
+example, with &lsquo;<samp>-br -ce</samp>&rsquo; you get the following:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">if (x &gt; 0) {
+  x--;
+} else {
+  fprintf (stderr, &quot;...something wrong?\n&quot;);
+}
+</pre></td></tr></table>
+
+<p>With &lsquo;<samp>-br -nce</samp>&rsquo; that code would appear as
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">if (x &gt; 0) {
+  x--;
+}
+else {
+  fprintf (stderr, &quot;...something wrong?\n&quot;);
+}
+</pre></td></tr></table>
+
+<a name="IDX72"></a>
+<a name="IDX73"></a>
+<a name="IDX74"></a>
+<a name="IDX75"></a>
+<p>This causes the <code>while</code> in a do-while
+loop to cuddle up to the immediately preceding &lsquo;<samp>}</samp>&rsquo;.  For
+example, with &lsquo;<samp>-cdw</samp>&rsquo; you get the following:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">do {
+  x--;
+} while (x);
+</pre></td></tr></table>
+
+<p>With &lsquo;<samp>-ncdw</samp>&rsquo; that code would appear as
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">do {
+  x--;
+}
+while (x);
+</pre></td></tr></table>
+
+<a name="IDX76"></a>
+<a name="IDX77"></a>
+<p>The &lsquo;<samp>-cli</samp>&rsquo; option specifies the number of spaces that case labels
+should be indented to the right of the containing <code>switch</code>
+statement.
+</p>
+<p>The default gives code like:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">switch (i)
+  {
+  case 0:
+    break;
+  case 1:
+    {
+      ++i;
+    }
+  default:
+    break;
+  }
+</pre></td></tr></table>
+
+<p>Using the &lsquo;<samp>-cli2</samp>&rsquo; that would become:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">switch (i)
+  {
+    case 0:
+      break;
+    case 1:
+      {
+        ++i;
+      }
+    default:
+      break;
+  }
+</pre></td></tr></table>
+
+<a name="IDX78"></a>
+<a name="IDX79"></a>
+<p>The indentation of the braces below a case statement can be
+controlled with the &lsquo;<samp>-cbi<var>n</var></samp>&rsquo; option.  For example,
+using &lsquo;<samp>-cli2 -cbi0</samp>&rsquo; results in:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">switch (i)
+  {
+    case 0:
+      break;
+    case 1:
+    {
+      ++i;
+    }
+    default:
+      break;
+  }
+</pre></td></tr></table>
+
+<a name="IDX80"></a>
+<a name="IDX81"></a>
+<a name="IDX82"></a>
+<a name="IDX83"></a>
+<p>If a semicolon is on the same line as a <code>for</code> or <code>while</code>
+statement, the &lsquo;<samp>-ss</samp>&rsquo; option will cause a space to be placed before
+the semicolon.  This emphasizes the semicolon, making it clear that the
+body of the <code>for</code> or <code>while</code> statement is an empty statement.
+&lsquo;<samp>-nss</samp>&rsquo; disables this feature.
+</p>
+<a name="IDX84"></a>
+<a name="IDX85"></a>
+<a name="IDX86"></a>
+<a name="IDX87"></a>
+<p>The &lsquo;<samp>-pcs</samp>&rsquo; option causes a space to be placed between the name of
+the procedure being called and the &lsquo;<samp>(</samp>&rsquo; (for example, <code>puts
+(&quot;Hi&quot;);</code>.  The &lsquo;<samp>-npcs</samp>&rsquo; option would give <code>puts(&quot;Hi&quot;);</code>).
+
+</p>
+<a name="IDX88"></a>
+<a name="IDX89"></a>
+<a name="IDX90"></a>
+<a name="IDX91"></a>
+<p>If the &lsquo;<samp>-cs</samp>&rsquo; option is specified, <code>indent</code> puts a space between
+a cast operator and the object to be cast. The &lsquo;<samp>-ncs</samp>&rsquo; ensures that there 
+is no space between the cast operator and the object. Remember that <code>indent</code>
+only knows about the standard C data types and so cannot recognise user-defined types
+in casts. Thus <code>(mytype)thing</code> is not treated as a cast.
+</p>
+<a name="IDX92"></a>
+<a name="IDX93"></a>
+<p>The &lsquo;<samp>-bs</samp>&rsquo; option ensures that there is a space between the
+keyword <code>sizeof</code> and its argument.  In some versions, this is
+known as the &lsquo;<samp>Bill_Shannon</samp>&rsquo; option.
+</p>
+<a name="IDX94"></a>
+<a name="IDX95"></a>
+<a name="IDX96"></a>
+<a name="IDX97"></a>
+<p>The &lsquo;<samp>-saf</samp>&rsquo; option forces a space between a <code>for</code>
+and the following parenthesis.  This is the default.
+</p>
+<a name="IDX98"></a>
+<a name="IDX99"></a>
+<a name="IDX100"></a>
+<a name="IDX101"></a>
+<p>The &lsquo;<samp>-sai</samp>&rsquo; option forces a space between a <code>if</code>
+and the following parenthesis.  This is the default.
+</p>
+<a name="IDX102"></a>
+<a name="IDX103"></a>
+<a name="IDX104"></a>
+<a name="IDX105"></a>
+<p>The &lsquo;<samp>-saw</samp>&rsquo; option forces a space between a <code>while</code>
+and the following parenthesis.  This is the default.
+</p>
+<a name="IDX106"></a>
+<a name="IDX107"></a>
+<p>The &lsquo;<samp>-prs</samp>&rsquo; option causes all parentheses to be separated with
+a space from whatever is between them.  For example, using &lsquo;<samp>-prs</samp>&rsquo;
+results in code like:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">  while ( ( e_code - s_code ) &lt; ( dec_ind - 1 ) )
+    {
+      set_buf_break ( bb_dec_ind );
+      *e_code++ = ' ';
+    }
+</pre></td></tr></table>
+
+<hr size="1">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_8.html#SEC8" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_10.html#SEC10" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_17.html#SEC17" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>david</em> on <em>December, 15 2008</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.78</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

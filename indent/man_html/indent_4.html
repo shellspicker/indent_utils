@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on December, 15 2008 by texi2html 1.78 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+
+-->
+<head>
+<title>indent:  Indent and Format C Program Source: 1.3 Common styles</title>
+
+<meta name="description" content="indent:  Indent and Format C Program Source: 1.3 Common styles">
+<meta name="keywords" content="indent:  Indent and Format C Program Source: 1.3 Common styles">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.78">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Common-styles"></a>
+<a name="SEC4"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_3.html#SEC3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_5.html#SEC5" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_17.html#SEC17" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<hr size="1">
+<h2 class="section"> 1.3 Common styles </h2>
+
+<p>There are several common styles of C code, including the GNU style, the
+Kernighan &amp; Ritchie style, and the original Berkeley style.  A style may
+be selected with a single <em>background</em> option, which specifies a set
+of values for all other options.  However, explicitly specified options
+always override options implied by a background option.
+</p>
+<a name="IDX13"></a>
+<a name="IDX14"></a>
+<a name="IDX15"></a>
+<p>As of version 1.2, the default style of GNU <code>indent</code> is the GNU
+style.  Thus, it is no longer necessary to specify the option
+&lsquo;<samp>-gnu</samp>&rsquo; to obtain this format, although doing so will not cause an
+error.  Option settings which correspond to the GNU style are:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">-nbad -bap -nbc -bbo -bl -bli2 -bls -ncdb -nce -cp1 -cs -di2
+-ndj -nfc1 -nfca -hnl -i2 -ip5 -lp -pcs -nprs -psl -saf -sai
+-saw -nsc -nsob
+</pre></td></tr></table>
+
+<p>The GNU coding style is that preferred by the GNU project.  It is the
+style that the GNU Emacs C mode encourages and which is used in the C
+portions of GNU Emacs.  (People interested in writing programs for
+Project GNU should get a copy of <cite>The GNU Coding Standards</cite>, which
+also covers semantic and portability issues such as memory usage, the
+size of integers, etc.)
+</p>
+<a name="IDX16"></a>
+<a name="IDX17"></a>
+<a name="IDX18"></a>
+<p>The Kernighan &amp; Ritchie style is used throughout their well-known book
+<cite>The C Programming Language</cite>.  It is enabled with the &lsquo;<samp>-kr</samp>&rsquo;
+option.  The Kernighan &amp; Ritchie style corresponds to the following set
+of options:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">-nbad -bap -bbo -nbc -br -brs -c33 -cd33 -ncdb -ce -ci4 -cli0
+-cp33 -cs -d0 -di1 -nfc1 -nfca -hnl -i4 -ip0 -l75 -lp -npcs
+-nprs -npsl -saf -sai -saw -nsc -nsob -nss
+</pre></td></tr></table>
+
+<p>Kernighan &amp; Ritchie style does not put comments to the right of code in
+the same column at all times (nor does it use only one space to the
+right of the code), so for this style <code>indent</code> has arbitrarily
+chosen column 33.
+</p>
+<a name="IDX19"></a>
+<a name="IDX20"></a>
+<a name="IDX21"></a>
+<a name="IDX22"></a>
+<p>The style of the original Berkeley <code>indent</code> may be obtained by
+specifying &lsquo;<samp>-orig</samp>&rsquo; (or by specifying &lsquo;<samp>--original</samp>&rsquo;, using the
+long option name).  This style is equivalent to the following settings:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">-nbad -nbap -bbo -bc -br -brs -c33 -cd33 -cdb -ce -ci4 -cli0
+-cp33 -di16 -fc1 -fca -hnl -i4 -ip4 -l75 -lp -npcs -nprs -psl
+-saf -sai -saw -sc -nsob -nss -ts8
+</pre></td></tr></table>
+
+<a name="IDX23"></a>
+<a name="IDX24"></a>
+<a name="IDX25"></a>
+<p>The Linux style is used in the linux kernel code and drivers. Code 
+generally has to follow the Linux coding style to be accepted. 
+This style is equivalent to the following settings:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">-nbad -bap -nbc -bbo -hnl -br -brs -c33 -cd33 -ncdb -ce -ci4 
+-cli0 -d0 -di1 -nfc1 -i8 -ip0 -l80 -lp -npcs -nprs -npsl -sai
+-saf -saw -ncs -nsc -sob -nfca -cp33 -ss -ts8 -il1
+</pre></td></tr></table>
+
+<hr size="1">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_3.html#SEC3" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_5.html#SEC5" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_17.html#SEC17" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>david</em> on <em>December, 15 2008</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.78</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

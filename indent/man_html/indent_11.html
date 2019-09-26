@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on December, 15 2008 by texi2html 1.78 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+
+-->
+<head>
+<title>indent:  Indent and Format C Program Source: 1.8 Indentation</title>
+
+<meta name="description" content="indent:  Indent and Format C Program Source: 1.8 Indentation">
+<meta name="keywords" content="indent:  Indent and Format C Program Source: 1.8 Indentation">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.78">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Indentation"></a>
+<a name="SEC11"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_10.html#SEC10" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_12.html#SEC12" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_17.html#SEC17" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<hr size="1">
+<h2 class="section"> 1.8 Indentation </h2>
+
+<p>One issue in the formatting of code is how far each line should be
+indented from the left margin.  When the beginning of a statement such
+as <code>if</code> or <code>for</code> is encountered, the indentation level is
+increased by the value specified by the &lsquo;<samp>-i</samp>&rsquo; option.  For example,
+use &lsquo;<samp>-i8</samp>&rsquo; to specify an eight character indentation for each
+level.  When a statement is broken across two lines, the second line is
+indented by a number of additional spaces specified by the &lsquo;<samp>-ci</samp>&rsquo;
+option.  &lsquo;<samp>-ci</samp>&rsquo; defaults to 0.  However, if the &lsquo;<samp>-lp</samp>&rsquo; option is
+specified, and a line has a left parenthesis which is not closed on that
+line, then continuation lines will be lined up to start at the character
+position just after the left parenthesis.  This processing also applies
+to &lsquo;<samp>[</samp>&rsquo; and applies to &lsquo;<samp>{</samp>&rsquo; when it occurs in initialization
+lists.  For example, a piece of continued code might look like this with
+&lsquo;<samp>-nlp -ci3</samp>&rsquo; in effect:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">  p1 = first_procedure (second_procedure (p2, p3),
+     third_procedure (p4, p5));
+</pre></td></tr></table>
+
+<p>With &lsquo;<samp>-lp</samp>&rsquo; in effect the code looks somewhat clearer:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">  p1 = first_procedure (second_procedure (p2, p3),
+                        third_procedure (p4, p5));
+</pre></td></tr></table>
+
+<a name="IDX136"></a>
+<a name="IDX137"></a>
+<p>When a statement is broken in between two or more paren pairs (...),
+each extra pair causes the indentation level extra indentation:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">if ((((i &lt; 2 &amp;&amp;
+        k &gt; 0) || p == 0) &amp;&amp;
+    q == 1) ||
+  n = 0)
+</pre></td></tr></table>
+
+<p>The option &lsquo;<samp>-ip<var>N</var></samp>&rsquo; can be used to set the extra offset per paren.
+For instance, &lsquo;<samp>-ip0</samp>&rsquo; would format the above as:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">if ((((i &lt; 2 &amp;&amp;
+  k &gt; 0) || p == 0) &amp;&amp;
+  q == 1) ||
+  n = 0)
+</pre></td></tr></table>
+
+<p><code>indent</code> assumes that tabs are placed at regular intervals of both
+input and output character streams.  These intervals are by default 8
+columns wide, but (as of version 1.2) may be changed by the &lsquo;<samp>-ts</samp>&rsquo;
+option.  Tabs are treated as the equivalent number of spaces.
+</p>
+<a name="IDX138"></a>
+<a name="IDX139"></a>
+<a name="IDX140"></a>
+<a name="IDX141"></a>
+<p>The indentation of type declarations in old-style function definitions
+is controlled by the &lsquo;<samp>-ip</samp>&rsquo; parameter.  This is a numeric parameter
+specifying how many spaces to indent type declarations.  For example,
+the default &lsquo;<samp>-ip5</samp>&rsquo; makes definitions look like this:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">char *
+create_world (x, y, scale)
+     int x;
+     int y;
+     float scale;
+{
+  . . .
+}
+</pre></td></tr></table>
+
+<p>For compatibility with other versions of indent, the option &lsquo;<samp>-nip</samp>&rsquo;
+is provided, which is equivalent to &lsquo;<samp>-ip0</samp>&rsquo;.
+</p>
+<a name="IDX142"></a>
+<a name="IDX143"></a>
+<a name="IDX144"></a>
+<a name="IDX145"></a>
+<p>ANSI C allows white space to be placed on preprocessor command lines
+between the character &lsquo;<samp>#</samp>&rsquo; and the command name.  By default,
+<code>indent</code> removes this space, but specifying the &lsquo;<samp>-lps</samp>&rsquo; option
+directs <code>indent</code> to leave this space unmodified. The option &lsquo;<samp>-ppi</samp>&rsquo; 
+overrides  &lsquo;<samp>-nlps</samp>&rsquo; and  &lsquo;<samp>-lps</samp>&rsquo;.
+</p>
+<a name="IDX146"></a>
+<a name="IDX147"></a>
+<p>This option can be used to request that preprocessor conditional statements can
+be indented by to given number of spaces, for example with the option &lsquo;<samp>-ppi 3</samp>&rsquo;
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">#if X
+#if Y
+#define Z 1
+#else
+#define Z 0
+#endif
+#endif
+</pre></td></tr></table>
+<p>becomes
+</p><table><tr><td>&nbsp;</td><td><pre class="example">#if X
+#   if Y
+#      define Z 1
+#   else
+#      define Z 0
+#   endif
+#endif
+</pre></td></tr></table>
+
+<a name="IDX148"></a>
+<a name="IDX149"></a>
+<p>This option sets the offset at which a label (except case labels)
+will be positioned. If it is set to zero or a positive number, this indicates how 
+far from the left margin to indent a label.  If it is set to a negative number, 
+this indicates how far back from the current indent level to place the label.  
+The default setting is -2 which matches the behaviour of earlier versions of indent.
+Note that this parameter does not affect the placing of case labels; see the
+&lsquo;<samp>-cli</samp>&rsquo; parameter for that. For example with the option &lsquo;<samp>-il 1</samp>&rsquo;
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">function()
+{
+    if (do_stuff1() == ERROR)
+        goto cleanup1;
+
+    if (do_stuff2() == ERROR)
+        goto cleanup2;
+
+    return SUCCESS;
+
+  cleanup2:
+    do_cleanup2();
+
+  cleanup1:
+    do_cleanup1();
+
+    return ERROR;
+}
+</pre></td></tr></table>
+<p>becomes
+</p><table><tr><td>&nbsp;</td><td><pre class="example">function()
+{
+    if (do_stuff1() == ERROR)
+        goto cleanup1;
+
+    if (do_stuff2() == ERROR)
+        goto cleanup2;
+
+    return SUCCESS;
+
+ cleanup2:
+    do_cleanup2();
+
+ cleanup1:
+    do_cleanup1();
+
+    return ERROR;
+}
+</pre></td></tr></table>
+
+<hr size="1">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_10.html#SEC10" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_12.html#SEC12" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_17.html#SEC17" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>david</em> on <em>December, 15 2008</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.78</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

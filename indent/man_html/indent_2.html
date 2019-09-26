@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on December, 15 2008 by texi2html 1.78 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+
+-->
+<head>
+<title>indent:  Indent and Format C Program Source: 1.1 Invoking indent</title>
+
+<meta name="description" content="indent:  Indent and Format C Program Source: 1.1 Invoking indent">
+<meta name="keywords" content="indent:  Indent and Format C Program Source: 1.1 Invoking indent">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.78">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Invoking-indent"></a>
+<a name="SEC2"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_3.html#SEC3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_17.html#SEC17" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<hr size="1">
+<h2 class="section"> 1.1 Invoking <code>indent</code> </h2>
+
+<p>As of version 1.3, the format of the <code>indent</code> command is:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">
+indent [<var>options</var>] [<var>input-files</var>]
+
+indent [<var>options</var>] [<var>single-input-file</var>] [-o <var>output-file</var>]
+
+</pre></td></tr></table>
+
+<p>This format is different from earlier versions and other versions of
+<code>indent</code>.
+</p>
+<p>In the first form, one or more input files are specified.  <code>indent</code>
+makes a backup copy of each file, and the original file is replaced with
+its indented version.  See section <a href="indent_3.html#SEC3">Backup Files</a>, for an explanation of how
+backups are made.
+</p>
+<a name="IDX1"></a>
+<a name="IDX2"></a>
+<a name="IDX3"></a>
+<p>In the second form, only one input file is specified.  In this case, or
+when the standard input is used, you may specify an output file after
+the &lsquo;<samp>-o</samp>&rsquo; option.
+</p>
+<a name="IDX4"></a>
+<a name="IDX5"></a>
+<a name="IDX6"></a>
+<p>To cause <code>indent</code> to write to standard output, use the &lsquo;<samp>-st</samp>&rsquo;
+option.  This is only allowed when there is only one input file, or when
+the standard input is used.
+</p>
+<a name="IDX7"></a>
+<p>If no input files are named, the standard input is read for input.
+Also, if a filename named &lsquo;<samp>-</samp>&rsquo; is specified, then the standard input
+is read.
+</p>
+<p>As an example, each of the following commands will input the program
+&lsquo;<tt>slithy_toves.c</tt>&rsquo; and write its indented text to
+&lsquo;<tt>slithy_toves.out</tt>&rsquo;:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">
+indent slithy_toves.c -o slithy_toves.out
+
+indent -st slithy_toves.c &gt; slithy_toves.out
+
+cat slithy_toves.c | indent -o slithy_toves.out
+
+</pre></td></tr></table>
+
+<a name="IDX8"></a>
+<p>Most other options to <code>indent</code> control how programs are formatted.
+As of version 1.2, <code>indent</code> also recognizes a long name for each
+option name.  Long options are prefixed by either &lsquo;<samp>--</samp>&rsquo; or
+&lsquo;<samp>+</samp>&rsquo;.
+<a name="DOCF1" href="indent_fot.html#FOOT1">(1)</a>
+ In most of this document,
+the traditional, short names are used for the sake of brevity.
+See section <a href="indent_17.html#SEC17">Option Summary</a>, for a list of options, including both long and
+short names.
+</p>
+<p>Here is another example:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">indent -br test/metabolism.c -l85
+</pre></td></tr></table>
+
+<p>This will indent the program &lsquo;<tt>test/metabolism.c</tt>&rsquo; using the
+&lsquo;<samp>-br</samp>&rsquo; and &lsquo;<samp>-l85</samp>&rsquo; options, write the output back to
+&lsquo;<tt>test/metabolism.c</tt>&rsquo;, and write the original contents of
+&lsquo;<tt>test/metabolism.c</tt>&rsquo; to a backup file in the directory &lsquo;<tt>test</tt>&rsquo;.
+</p>
+<p>Equivalent invocations using long option names for this example would
+be:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">
+indent --braces-on-if-line --line-length185 test/metabolism.c
+
+indent +braces-on-if-line +line-length185 test/metabolism.c
+
+</pre></td></tr></table>
+
+<a name="IDX9"></a>
+<a name="IDX10"></a>
+<a name="IDX11"></a>
+<a name="IDX12"></a>
+<p>If you find that you often use <code>indent</code> with the same options, you
+may put those options into a file named &lsquo;<tt>.indent.pro</tt>&rsquo;.
+<code>indent</code> will look for a profile file in three places. First it will check
+the environment variable <code>INDENT_PROFILE</code>. If that exists its value 
+is expected to name the file that is to be used. If the environment variable does 
+not exist, indent looks for &lsquo;<tt>.indent.pro</tt>&rsquo; in the current directory
+ and use that if found.  Finally <code>indent</code> will search
+your home directory for &lsquo;<tt>.indent.pro</tt>&rsquo; and use that file if it is
+found.  This behaviour is different from that of other versions of
+<code>indent</code>, which load both files if they both exist.
+</p>
+<p>The format of &lsquo;<tt>.indent.pro</tt>&rsquo; is simply a list of options, just as
+they would appear on the command line, separated by white space (tabs,
+spaces, and newlines).  Options in &lsquo;<tt>.indent.pro</tt>&rsquo; may be surrounded by C
+or C++ comments, in which case they are ignored.
+</p>
+<p>Command line switches are handled <em>after</em> processing
+&lsquo;<tt>.indent.pro</tt>&rsquo;.  Options specified later override arguments
+specified earlier, with one exception: Explicitly specified options
+always override background options (see section <a href="indent_4.html#SEC4">Common styles</a>).  You can
+prevent <code>indent</code> from reading an &lsquo;<tt>.indent.pro</tt>&rsquo; file by
+specifying the &lsquo;<samp>-npro</samp>&rsquo; option.
+</p>
+<hr size="1">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_3.html#SEC3" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_17.html#SEC17" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>david</em> on <em>December, 15 2008</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.78</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

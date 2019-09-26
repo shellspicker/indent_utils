@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on December, 15 2008 by texi2html 1.78 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+
+-->
+<head>
+<title>indent:  Indent and Format C Program Source: 1.4 Blank lines</title>
+
+<meta name="description" content="indent:  Indent and Format C Program Source: 1.4 Blank lines">
+<meta name="keywords" content="indent:  Indent and Format C Program Source: 1.4 Blank lines">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.78">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Blank-lines"></a>
+<a name="SEC5"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_4.html#SEC4" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_6.html#SEC6" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_17.html#SEC17" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<hr size="1">
+<h2 class="section"> 1.4 Blank lines </h2>
+
+<p>Various programming styles use blank lines in different places.
+<code>indent</code> has a number of options to insert or delete blank lines in
+specific places.
+</p>
+<p>The &lsquo;<samp>-bad</samp>&rsquo; option causes <code>indent</code> to force a blank line after
+every block of declarations.  The &lsquo;<samp>-nbad</samp>&rsquo; option causes
+<code>indent</code> not to force such blank lines.
+</p>
+<p>The &lsquo;<samp>-bap</samp>&rsquo; option forces a blank line after every procedure body.
+The &lsquo;<samp>-nbap</samp>&rsquo; option forces no such blank line.
+</p>
+<a name="IDX26"></a>
+<a name="IDX27"></a>
+<a name="IDX28"></a>
+<a name="IDX29"></a>
+<p>The &lsquo;<samp>-bbb</samp>&rsquo; option forces a blank line before every boxed comment
+(See section <a href="indent_8.html#SEC8">Comments</a>.)
+The &lsquo;<samp>-nbbb</samp>&rsquo; option does not force such blank lines.
+</p>
+<a name="IDX30"></a>
+<a name="IDX31"></a>
+<a name="IDX32"></a>
+<a name="IDX33"></a>
+<p>The &lsquo;<samp>-sob</samp>&rsquo; option causes <code>indent</code> to swallow optional blank
+lines (that is, any optional blank lines present in the input will be
+removed from the output).  If the &lsquo;<samp>-nsob</samp>&rsquo; is specified, any blank
+lines present in the input file will be copied to the output file.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top"><a href="indent_6.html#SEC6">1.4.1 &ndash;blank-lines-after-declarations</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                        More on the &lsquo;<samp>-bad</samp>&rsquo; option.
+</td></tr>
+<tr><td align="left" valign="top"><a href="indent_7.html#SEC7">1.4.2 &ndash;blank-lines-after-procedures</a></td><td>&nbsp;&nbsp;</td><td align="left" valign="top">                        More on the &lsquo;<samp>-bap</samp>&rsquo; option.
+</td></tr>
+</table>
+
+<hr size="1">
+<p>
+ <font size="-1">
+  This document was generated by <em>david</em> on <em>December, 15 2008</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.78</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

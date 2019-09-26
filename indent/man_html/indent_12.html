@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on December, 15 2008 by texi2html 1.78 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+
+-->
+<head>
+<title>indent:  Indent and Format C Program Source: 1.9 Breaking long lines</title>
+
+<meta name="description" content="indent:  Indent and Format C Program Source: 1.9 Breaking long lines">
+<meta name="keywords" content="indent:  Indent and Format C Program Source: 1.9 Breaking long lines">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.78">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Breaking-long-lines"></a>
+<a name="SEC12"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_11.html#SEC11" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_13.html#SEC13" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_17.html#SEC17" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<hr size="1">
+<h2 class="section"> 1.9 Breaking long lines </h2>
+
+<p>With the option &lsquo;<samp>-l<var>n</var></samp>&rsquo;, or &lsquo;<samp>--line-length<var>n</var></samp>&rsquo;, it is
+possible to specify the maximum length of a line of C code, not including
+possible comments that follow it.
+</p>
+<p>When lines become longer than the specified line length, GNU <code>indent</code>
+tries to break the line at a logical place.  This is new as of version 2.1
+however and not very intelligent or flexible yet.
+</p>
+<a name="IDX150"></a>
+<a name="IDX151"></a>
+<a name="IDX152"></a>
+<a name="IDX153"></a>
+<a name="IDX154"></a>
+<a name="IDX155"></a>
+<a name="IDX156"></a>
+<a name="IDX157"></a>
+<p>Currently there are two options that allow one to interfere with the
+algorithm that determines where to break a line.
+</p>
+<p>The &lsquo;<samp>-bbo</samp>&rsquo; option causes GNU <code>indent</code> to prefer to break
+long lines before the boolean operators <code>&amp;&amp;</code> and <code>||</code>.  The
+&lsquo;<samp>-nbbo</samp>&rsquo; option causes GNU <code>indent</code> not have that
+preference.  For example, the default option &lsquo;<samp>-bbo</samp>&rsquo; (together
+with &lsquo;<samp>--line-length60</samp>&rsquo; and &lsquo;<samp>--ignore-newlines</samp>&rsquo;) makes code
+look like this:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">  if (mask
+      &amp;&amp; ((mask[0] == '\0')
+          || (mask[1] == '\0'
+              &amp;&amp; ((mask[0] == '0') || (mask[0] == '*')))))
+</pre></td></tr></table>
+
+<p>Using the option &lsquo;<samp>-nbbo</samp>&rsquo; will make it look like this:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">  if (mask &amp;&amp;
+      ((mask[0] == '\0') ||
+       (mask[1] == '\0' &amp;&amp;
+        ((mask[0] == '0') || (mask[0] == '*')))))
+</pre></td></tr></table>
+
+<p>The default &lsquo;<samp>-hnl</samp>&rsquo;, however, honours newlines in the input file by
+giving them the highest possible priority to break lines at.  For example,
+when the input file looks like this:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">  if (mask
+      &amp;&amp; ((mask[0] == '\0')
+      || (mask[1] == '\0' &amp;&amp; ((mask[0] == '0') || (mask[0] == '*')))))
+</pre></td></tr></table>
+
+<p>then using the option &lsquo;<samp>-hnl</samp>&rsquo;, or &lsquo;<samp>--honour-newlines</samp>&rsquo;,
+together with the previously mentioned &lsquo;<samp>-nbbo</samp>&rsquo; and
+&lsquo;<samp>--line-length60</samp>&rsquo;, will cause the output not to be what is given
+in the last example but instead will prefer to break at the positions
+where the code was broken in the input file:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">  if (mask
+      &amp;&amp; ((mask[0] == '\0')
+          || (mask[1] == '\0' &amp;&amp;
+              ((mask[0] == '0') || (mask[0] == '*')))))
+</pre></td></tr></table>
+
+<p>The idea behind this option is that lines which are too long, but are already
+broken up, will not be touched by GNU <code>indent</code>.  Really messy code
+should be run through <code>indent</code> at least once using the
+&lsquo;<samp>--ignore-newlines</samp>&rsquo; option though.
+</p>
+<hr size="1">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_11.html#SEC11" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_13.html#SEC13" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_17.html#SEC17" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>david</em> on <em>December, 15 2008</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.78</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

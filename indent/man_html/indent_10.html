@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on December, 15 2008 by texi2html 1.78 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+
+-->
+<head>
+<title>indent:  Indent and Format C Program Source: 1.7 Declarations</title>
+
+<meta name="description" content="indent:  Indent and Format C Program Source: 1.7 Declarations">
+<meta name="keywords" content="indent:  Indent and Format C Program Source: 1.7 Declarations">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.78">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Declarations"></a>
+<a name="SEC10"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_9.html#SEC9" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_11.html#SEC11" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_17.html#SEC17" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<hr size="1">
+<h2 class="section"> 1.7 Declarations </h2>
+
+<p>By default <code>indent</code> will line up identifiers, in the column
+specified by the &lsquo;<samp>-di</samp>&rsquo; option.  For example, &lsquo;<samp>-di16</samp>&rsquo; makes
+things look like:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">int             foo;
+char           *bar;
+</pre></td></tr></table>
+
+<p>Using a small value (such as one or two) for the &lsquo;<samp>-di</samp>&rsquo; option can
+be used to cause the identifiers to be placed in the first available
+position; for example:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">int foo;
+char *bar;
+</pre></td></tr></table>
+
+<p>The value given to the &lsquo;<samp>-di</samp>&rsquo; option will still affect variables
+which are put on separate lines from their types, for example
+&lsquo;<samp>-di2</samp>&rsquo; will lead to:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">int
+  foo;
+</pre></td></tr></table>
+
+<a name="IDX108"></a>
+<a name="IDX109"></a>
+<a name="IDX110"></a>
+<a name="IDX111"></a>
+<p>If the &lsquo;<samp>-bc</samp>&rsquo; option is specified, a newline is forced after each
+comma in a declaration.  For example,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">int a,
+  b,
+  c;
+</pre></td></tr></table>
+
+<p>With the &lsquo;<samp>-nbc</samp>&rsquo; option this would look like
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">int a, b, c;
+</pre></td></tr></table>
+
+<a name="IDX112"></a>
+<a name="IDX113"></a>
+<a name="IDX114"></a>
+<a name="IDX115"></a>
+<a name="IDX116"></a>
+<a name="IDX117"></a>
+<a name="IDX118"></a>
+<a name="IDX119"></a>
+<p>The &lsquo;<samp>-bfda</samp>&rsquo; option causes a newline to be forced after the comma
+separating the arguments of a function declaration.  The arguments will
+appear at one indention level deeper than the function declaration.  This 
+is particularly helpful for functions with long argument lists. 
+The option &lsquo;<samp>-bfde</samp>&rsquo; causes a newline to be forced before the closing 
+bracket of the function declaration. For both options the 'n' setting is the default:
+-nbdfa and -nbdfe.
+</p>
+
+<p>For 
+example,
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">void foo (int arg1, char arg2, int *arg3, long arg4, char arg5);
+</pre></td></tr></table>
+<p>With the &lsquo;<samp>-bfda</samp>&rsquo; option this would look like
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">void foo (
+    int arg1,
+    char arg2,
+    int *arg3,
+    long arg4,
+    char arg5);
+</pre></td></tr></table>
+
+<p>With, in addition, the &lsquo;<samp>-bfde</samp>&rsquo; option this would look like
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">void foo (
+    int arg1,
+    char arg2,
+    int *arg3,
+    long arg4,
+    char arg5
+    );
+</pre></td></tr></table>
+
+<a name="IDX120"></a>
+<a name="IDX121"></a>
+<a name="IDX122"></a>
+<a name="IDX123"></a>
+<a name="IDX124"></a>
+<p>The &lsquo;<samp>-psl</samp>&rsquo; option causes the type of a procedure being defined to
+be placed on the line before the name of the procedure.  This style is
+required for the <code>etags</code> program to work correctly, as well as some
+of the <code>c-mode</code> functions of Emacs.
+</p>
+<a name="IDX125"></a>
+<a name="IDX126"></a>
+<a name="IDX127"></a>
+<p>You must use the &lsquo;<samp>-T</samp>&rsquo;
+option to tell <code>indent</code> the name of all the typenames in your
+program that are defined by <code>typedef</code>.  &lsquo;<samp>-T</samp>&rsquo; can be specified
+more than once, and all names specified are used.  For example, if your
+program contains
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">typedef unsigned long CODE_ADDR;
+typedef enum {red, blue, green} COLOR;
+</pre></td></tr></table>
+
+<p>you would use the options &lsquo;<samp>-T CODE_ADDR -T COLOR</samp>&rsquo;.
+</p>
+<a name="IDX128"></a>
+<a name="IDX129"></a>
+<a name="IDX130"></a>
+<a name="IDX131"></a>
+
+<p>The &lsquo;<samp>-brs</samp>&rsquo; or &lsquo;<samp>-bls</samp>&rsquo; option specifies how to format braces
+in struct declarations.  The &lsquo;<samp>-brs</samp>&rsquo; option formats braces like
+this:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">struct foo {
+  int x;
+};
+</pre></td></tr></table>
+
+<p>The &lsquo;<samp>-bls</samp>&rsquo; option formats them like this:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">struct foo
+{
+  int x;
+};
+</pre></td></tr></table>
+
+<a name="IDX132"></a>
+<a name="IDX133"></a>
+<a name="IDX134"></a>
+<a name="IDX135"></a>
+
+<p>Similarly to the structure brace &lsquo;<samp>-brs</samp>&rsquo; and &lsquo;<samp>-bls</samp>&rsquo; options,
+ the function brace options &lsquo;<samp>-brf</samp>&rsquo; or &lsquo;<samp>-blf</samp>&rsquo; specify how to format the braces
+in function definitions.  The &lsquo;<samp>-brf</samp>&rsquo; option formats braces like
+this:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">int one(void) {
+  return 1;
+};
+</pre></td></tr></table>
+
+<p>The &lsquo;<samp>-blf</samp>&rsquo; option formats them like this:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">int one(void)
+{
+  return 1;
+};
+</pre></td></tr></table>
+
+<hr size="1">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_9.html#SEC9" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_11.html#SEC11" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_17.html#SEC17" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>david</em> on <em>December, 15 2008</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.78</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

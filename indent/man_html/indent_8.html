@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on December, 15 2008 by texi2html 1.78 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people.
+Send bugs and suggestions to <texi2html-bug@nongnu.org>
+
+-->
+<head>
+<title>indent:  Indent and Format C Program Source: 1.5 Comments</title>
+
+<meta name="description" content="indent:  Indent and Format C Program Source: 1.5 Comments">
+<meta name="keywords" content="indent:  Indent and Format C Program Source: 1.5 Comments">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.78">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.roman {font-family:serif; font-weight:normal;}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Comments"></a>
+<a name="SEC8"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_7.html#SEC7" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_9.html#SEC9" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_17.html#SEC17" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<hr size="1">
+<h2 class="section"> 1.5 Comments </h2>
+
+<p><code>indent</code> formats both C and C++ comments. C comments are begun with
+&lsquo;<samp>/*</samp>&rsquo;, terminated with &lsquo;<samp>*/</samp>&rsquo; and may contain newline characters.
+C++ comments begin with the delimiter &lsquo;<samp>//</samp>&rsquo; and end at the newline.
+</p>
+<p><code>indent</code> handles comments differently depending upon their context.
+<code>indent</code> attempts to distinguish between comments which follow
+statements, comments which follow declarations, comments following
+preprocessor directives, and comments which are not preceded by code of
+any sort, i.e., they begin the text of the line (although not
+necessarily in column 1).
+</p>
+<p><code>indent</code> further distinguishes between comments found outside of
+procedures and aggregates, and those found within them.  In particular,
+comments beginning a line found within a procedure will be indented to
+the column at which code is currently indented.  The exception to this 
+is a comment beginning in the leftmost column;  such a comment is output
+at that column.
+</p>
+<p><code>indent</code> attempts to leave <em>boxed comments</em> unmodified.  The
+general idea of such a comment is that it is enclosed in a rectangle or
+&ldquo;box&rdquo; of stars or dashes to visually set it apart.  More precisely,
+boxed comments are defined as those in which the initial &lsquo;<samp>/*</samp>&rsquo; is
+followed immediately by the character &lsquo;<samp>*</samp>&rsquo;, &lsquo;<samp>=</samp>&rsquo;, &lsquo;<samp>_</samp>&rsquo;, or
+&lsquo;<samp>-</samp>&rsquo;, or those in which the beginning comment delimiter (&lsquo;<samp>/*</samp>&rsquo;)
+is on a line by itself, and the following line begins with a &lsquo;<samp>*</samp>&rsquo; in
+the same column as the star of the opening delimiter.
+</p>
+<p>Examples of boxed comments are:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">/**********************
+ * Comment in a box!! *
+ **********************/
+
+       /*
+        * A different kind of scent,
+        * for a different kind of comment.
+        */
+</pre></td></tr></table>
+
+<p><code>indent</code> attempts to leave boxed comments exactly as they are found
+in the source file.  Thus the indentation of the comment is unchanged,
+and its length is not checked in any way.  The only alteration made is
+that an embedded tab character may be converted into the appropriate
+number of spaces.
+</p>
+<p>If the &lsquo;<samp>-bbb</samp>&rsquo; option is specified, all such boxed comments will be
+preceded by a blank line, unless such a comment is preceded by code.
+</p>
+<a name="IDX38"></a>
+<a name="IDX39"></a>
+<a name="IDX40"></a>
+<a name="IDX41"></a>
+<a name="IDX42"></a>
+<a name="IDX43"></a>
+<a name="IDX44"></a>
+<a name="IDX45"></a>
+<p>Comments which are not boxed comments may be formatted, which means that
+the line is broken to fit within a right margin and left-filled with
+whitespace.  Single newlines are equivalent to a space, but blank lines
+(two or more newlines in a row) are taken to mean a paragraph break.
+Formatting of comments which begin after the first column is enabled
+with the &lsquo;<samp>-fca</samp>&rsquo; option.  To format those beginning in column one,
+specify &lsquo;<samp>-fc1</samp>&rsquo;.  Such formatting is disabled by default.
+</p>
+<p>The right margin for formatting defaults to 78, but may be changed with
+the &lsquo;<samp>-lc</samp>&rsquo; option.  If the margin specified does not allow the
+comment to be printed, the margin will be automatically extended for the
+duration of that comment.  The margin is not respected if the comment is
+not being formatted.
+</p>
+<a name="IDX46"></a>
+<a name="IDX47"></a>
+<p>If the comment begins a line (i.e., there is no program text to its
+left), it will be indented to the column it was found in unless the
+comment is within a block of code.  In that case, such a comment will be
+aligned with the indented code of that block (unless the comment began
+in the first column).  This alignment may be affected by the &lsquo;<samp>-d</samp>&rsquo;
+option, which specifies an amount by which such comments are moved to
+the <em>left</em>, or unindented.  For example, &lsquo;<samp>-d2</samp>&rsquo; places comments
+two spaces to the left of code.  By default, comments are aligned with
+code, unless they begin in the first column, in which case they are left
+there by default &mdash; to get them aligned with the code, specify &lsquo;<samp>-fc1</samp>&rsquo;.
+</p>
+<a name="IDX48"></a>
+<a name="IDX49"></a>
+<a name="IDX50"></a>
+<a name="IDX51"></a>
+<a name="IDX52"></a>
+<a name="IDX53"></a>
+<a name="IDX54"></a>
+<a name="IDX55"></a>
+<a name="IDX56"></a>
+<a name="IDX57"></a>
+<p>Comments to the right of code will appear by default in column 33.
+This may be changed with one of three options.  &lsquo;<samp>-c</samp>&rsquo; will specify
+the column for comments following code, &lsquo;<samp>-cd</samp>&rsquo; specifies the
+column for comments following declarations, and &lsquo;<samp>-cp</samp>&rsquo; specifies
+the column for comments following preprocessor directives <code>#else</code>
+and <code>#endif</code>. &lsquo;<samp>-dj</samp>&rsquo; together with &lsquo;<samp>-cd0</samp>&rsquo; can be used
+to suppress alignment of comments to the right of declarations, causing the 
+comment to follow one tabstop from the end of the declaration. Normally &lsquo;<samp>-cd0</samp>&rsquo;
+causes &lsquo;<samp>-c</samp>&rsquo; to become effective.
+</p>
+<p>If the code to the left of the comment exceeds the beginning column,
+the comment column will be extended to the next tabstop column past
+the end of the code, or in the case of preprocessor directives, to one
+space past the end of the directive.  This extension lasts only for
+the output of that particular comment.
+</p>
+<a name="IDX58"></a>
+<a name="IDX59"></a>
+<a name="IDX60"></a>
+<a name="IDX61"></a>
+<p>The &lsquo;<samp>-cdb</samp>&rsquo; option places the comment delimiters on blank lines.
+Thus, a single line comment like <code>/* Loving hug */</code> can be
+transformed into:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">/*
+   Loving hug
+ */
+</pre></td></tr></table>
+
+<a name="IDX62"></a>
+<a name="IDX63"></a>
+<a name="IDX64"></a>
+<a name="IDX65"></a>
+<p>Stars can be placed at the beginning of multi-line comments with the
+&lsquo;<samp>-sc</samp>&rsquo; option.  Thus, the single-line comment above can be
+transformed (with &lsquo;<samp>-cdb -sc</samp>&rsquo;) into:
+</p>
+<table><tr><td>&nbsp;</td><td><pre class="example">/*
+ * Loving hug
+ */
+</pre></td></tr></table>
+
+<hr size="1">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="indent_7.html#SEC7" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_9.html#SEC9" title="Next section in reading order"> &gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="indent_1.html#SEC1" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[<a href="indent_17.html#SEC17" title="Next chapter"> &gt;&gt; </a>]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="indent.html#SEC_Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="indent_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[<a href="indent_18.html#SEC19" title="Index">Index</a>]</td>
+<td valign="middle" align="left">[<a href="indent_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>david</em> on <em>December, 15 2008</em> using <a href="http://www.nongnu.org/texi2html/"><em>texi2html 1.78</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>
