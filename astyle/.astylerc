@@ -16,7 +16,6 @@
 --pad-oper
 --pad-comma
 --pad-header
---delete-empty-lines
 --align-pointer=name
 --align-reference=name
 --break-one-line-headers
