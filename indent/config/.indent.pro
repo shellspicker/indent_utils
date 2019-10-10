@@ -5,6 +5,7 @@
 -fca
 -fc1
 -bbb
+-lc80
 -cdb
 -sc
 -cd40
@@ -29,5 +30,6 @@
 -cli0
 -cbi4
 
+-l80
 -nbbo
 -ci4

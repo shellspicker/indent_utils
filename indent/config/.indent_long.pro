@@ -5,6 +5,7 @@
 --format-all-comments
 --format-first-column-comments
 --blank-lines-before-block-comments
+--comment-line-length80
 --comment-delimiters-on-blank-lines
 --start-left-side-of-comments
 --declaration-comment-column40
@@ -29,5 +30,6 @@
 --case-indentation0
 --case-brace-indentation4
 
+--line-length80
 --break-after-boolean-operator
 --continuation-indentation4

@@ -35,7 +35,7 @@
 --no-blank-lines-before-block-comments          -nbbb
 	注释:空行:盒型注释前面如果不是代码，不处理前面的空行
 --comment-line-lengthn                          -lcn
-	注释:注释的长度限制为指定的列数
+	注释:有注释的行长度限制为指定的列数
 --comment-delimiters-on-blank-lines             -cdb
 	注释:多行注释如果写成了一行，变成首尾单独写/*和*/的格式
 --no-comment-delimiters-on-blank-lines          -ncdb

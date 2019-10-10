@@ -38,7 +38,7 @@
 --comment-indentation                           -cn
 	注释:右对齐指定的列数，对于代码段有效
 --comment-line-lengthn                          -lcn
-	注释:注释的长度限制为指定的列数
+	注释:有注释的行长度限制为指定的列数
 --continuation-indentation                      -cin
 	长语句:换行:缩进:一般长语句换行时缩进指定的列数
 --continue-at-parentheses                       -lp

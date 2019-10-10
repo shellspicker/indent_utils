@@ -2,6 +2,7 @@
 
 indent
 gnu的代码格式化工具(针对c)，大概没有支持c++
+
 gnu文档
 https://www.gnu.org/software/indent/manual/
 
@@ -14,6 +15,9 @@ dj选项没有在DECLARATION里面出现，在COMMENTS里面出现
 默认的gnu格式，自定义的话只要和gnu比较即可
 我已经定制好c代码的格式了，配置文件在index/.indent.pro，放到home目录即可
 直接对文件修改, 同时备份后缀~的同名文件.
+
+注意
+命令行的长选项, 其参数是紧跟选项的后面的, 配置文件不要出现'='.
 
 说明
 注释默认不处理第一列起始的注释
@@ -38,6 +42,9 @@ http://astyle.sourceforge.net/astyle.html
 使用
 配置文件名叫.astylerc, 放在home目录下.
 直接对文件修改, 同时备份后缀.orig的同名文件.
+
+bug
+--max-code-length, 无效, 尽管代码已经在它指定的50~200列的范围了.
 
 todolist
 ...
