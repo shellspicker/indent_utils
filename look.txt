@@ -44,7 +44,8 @@ http://astyle.sourceforge.net/astyle.html
 直接对文件修改, 同时备份后缀.orig的同名文件.
 
 bug
---max-code-length, 无效, 尽管代码已经在它指定的50~200列的范围了.
+--max-code-length, 无效, 尽管代码已经在它指定的50~200列的范围了,
+这是在我写一个数组声明的时候发现的, 对于函数中的代码我还没有测试.
 
 todolist
 ...
