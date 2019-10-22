@@ -4,7 +4,6 @@
 --attach-inlines
 --attach-extern-c
 --attach-closing-while
---indent-modifiers
 --indent-namespaces
 --indent-continuation=0
 --indent-preproc-block
