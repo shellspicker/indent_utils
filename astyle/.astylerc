@@ -11,14 +11,15 @@
 --indent-col1-comments
 --min-conditional-indent=0
 --max-continuation-indent=120
---break-blocks
+#--break-blocks
 --pad-oper
 --pad-comma
 --pad-header
+--delete-empty-lines
 --align-pointer=name
 --align-reference=name
+--remove-braces
 --break-one-line-headers
---add-braces
 --break-return-type
 --break-return-type-decl
 --max-code-length=80
