@@ -20,6 +20,8 @@
 --align-reference=name
 --remove-braces
 --break-one-line-headers
+--keep-one-line-blocks
+--keep-one-line-statements
 --break-return-type
 --break-return-type-decl
 --max-code-length=80
