@@ -1,4 +1,3 @@
---style=otbs
 --indent=tab=4
 --indent=force-tab=4
 --attach-inlines
@@ -11,7 +10,6 @@
 --indent-col1-comments
 --min-conditional-indent=0
 --max-continuation-indent=120
-#--break-blocks
 --pad-oper
 --pad-comma
 --pad-header
@@ -22,8 +20,6 @@
 --break-one-line-headers
 --keep-one-line-blocks
 --keep-one-line-statements
---break-return-type
---break-return-type-decl
 --max-code-length=80
 --mode=c
 --lineend=linux
